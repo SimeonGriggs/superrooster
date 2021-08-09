@@ -9,14 +9,14 @@ export default () => {
     .title('Content')
     .items([
       S.listItem()
-        .title(`Menu Items`)
-        .id(`menuItem`)
+        .title(`Pages`)
+        .id(`page`)
         .child(
-          S.documentTypeList(`menuItem`)
-            .title('Menu Items')
+          S.documentTypeList(`page`)
+            .title('Pages')
             .child((id) =>
               S.document()
-                .schemaType(`menuItem`)
+                .schemaType(`page`)
                 .documentId(id)
                 .views([
                   S.view.form(),
@@ -30,6 +30,6 @@ export default () => {
             )
         ),
       S.documentTypeListItem('location').title('Location'),
-      S.documentTypeListItem('page').title('Page'),
+      S.documentTypeListItem('menuItem').title('Menu Items'),
     ])
 }

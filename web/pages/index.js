@@ -1,16 +1,16 @@
-import { groq } from "next-sanity";
-import Head from "next/head";
+import {groq} from 'next-sanity'
+import Head from 'next/head'
 
-import { usePreviewSubscription, urlFor, PortableText } from "../lib/sanity";
-import { getClient } from "../lib/sanity.server";
+import {urlFor} from '../lib/sanity'
+import {getClient} from '../lib/sanity.server'
 
-var formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
 
-export default function Home({ data }) {
-  const { menuItems } = data;
+export default function Home({data}) {
+  const {menuItems} = data
 
   return (
     <div className="bg-blue-500 text-white flex flex-col items-center justify-center min-h-screen py-2">
@@ -38,18 +38,17 @@ export default function Home({ data }) {
             ))}
       </section>
     </div>
-  );
+  )
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const query = groq`*[_type == "menuItem"]`;
-  const menuItems = await getClient(preview).fetch(query);
-  console.log(menuItems);
+export async function getStaticProps({params, preview = false}) {
+  const query = groq`*[_type == "menuItem"]`
+  const menuItems = await getClient(preview).fetch(query)
 
   return {
     props: {
       preview,
-      data: { menuItems },
+      data: {menuItems},
     },
-  };
+  }
 }

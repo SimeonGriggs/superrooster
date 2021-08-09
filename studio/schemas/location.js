@@ -1,22 +1,22 @@
 export default {
-  name: "location",
-  title: "Location",
-  type: "document",
+  name: 'location',
+  title: 'Location',
+  type: 'document',
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string',
     },
     {
-      name: "address",
-      title: "Address",
-      type: "string",
+      name: 'address',
+      title: 'Address',
+      type: 'string',
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
   ],
-};
+}

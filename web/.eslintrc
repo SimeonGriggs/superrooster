@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "no-process-env": "off",
+    "react/forbid-prop-types": "off"
+  }
+}

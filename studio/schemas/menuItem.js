@@ -1,62 +1,62 @@
 // Create our number formatter.
-var formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
 
 export default {
-  name: "menuItem",
-  title: "Menu item",
-  type: "document",
+  name: 'menuItem',
+  title: 'Menu item',
+  type: 'document',
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string',
     },
     {
-      name: "type",
-      title: "Type",
-      type: "string",
-      initialValue: "main",
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      initialValue: 'main',
       options: {
-        layout: "radio",
+        layout: 'radio',
         list: [
-          { value: "main", title: "Main" },
-          { value: "side", title: "Side" },
+          {value: 'main', title: 'Main'},
+          {value: 'side', title: 'Side'},
         ],
       },
     },
     {
-      name: "price",
-      title: "Price",
-      description: "Enter price in Cents",
-      type: "number",
+      name: 'price',
+      title: 'Price',
+      description: 'Enter price in Cents',
+      type: 'number',
     },
     {
-      name: "description",
-      title: "Description",
-      type: "string",
+      name: 'description',
+      title: 'Description',
+      type: 'string',
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
   ],
   preview: {
     select: {
-      title: "title",
-      type: "type",
-      price: "price",
-      media: "image",
+      title: 'title',
+      type: 'type',
+      price: 'price',
+      media: 'image',
     },
-    prepare({ title, type, price, media }) {
+    prepare({title, type, price, media}) {
       return {
         title: `${title}`,
         subtitle: formatter.format(price / 100),
         media,
-      };
+      }
     },
   },
-};
+}
