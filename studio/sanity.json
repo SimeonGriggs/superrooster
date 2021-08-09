@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "project": {
+    "name": "Super Rooster"
+  },
+  "api": {
+    "projectId": "7jamiola",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "media",
+    "iframe-pane"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./parts/assetSources.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./desk-structure/index.js"
+    }
+  ]
+}
